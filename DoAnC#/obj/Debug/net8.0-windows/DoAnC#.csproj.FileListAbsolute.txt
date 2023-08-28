@@ -26,3 +26,5 @@ D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\ref\DoAnC#.dll
 D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.BanHang.resources
 D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.NhanVien.resources
 D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.QLBH.resources
+D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC#.sourcelink.json
+D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.Properties.Resources.resources
