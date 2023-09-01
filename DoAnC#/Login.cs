@@ -29,9 +29,8 @@ namespace DoAnC_
             if (tb.Rows.Count == 1)
             {
                 string roleName = tb.Rows[0]["roleName"].ToString();
-                txtUserName.Text = roleName;
                 MessageBox.Show("Đăng nhập thành công");
-                QLBH frm = new QLBH();
+                QLBH frm = new QLBH(txtUserName.Text);
                 frm.Show();
                 this.Hide();
             }

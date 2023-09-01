@@ -10,7 +10,7 @@ namespace DoAnC_
 {
     internal class KetNoi
     {
-        private string strCon = @"Data Source=DESKTOP-32FOJN8;Initial Catalog=QLHS;Integrated Security=True";
+        private string strCon = @"Data Source=DESKTOP-32FOJN8\SQLEXPRESS;Initial Catalog=QLHS;Integrated Security=True";
         private SqlConnection conn;
         public KetNoi()
         {
