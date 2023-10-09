@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLBH));
             groupBox4 = new GroupBox();
             dgvCus = new DataGridView();
             txtSearchCus = new TextBox();
             label10 = new Label();
             groupBox5 = new GroupBox();
+            txtSoLuongCTHD = new TextBox();
+            lbMaCTHD = new Label();
+            label21 = new Label();
+            label14 = new Label();
             btnThanhToan = new Button();
             lbNameNV = new Label();
             label20 = new Label();
@@ -41,7 +44,7 @@
             label15 = new Label();
             lbThanhTien = new Label();
             label11 = new Label();
-            dgvDetailOrder = new DataGridView();
+            dgvDetailHD = new DataGridView();
             txtAddressCus = new TextBox();
             txtPhoneCus = new TextBox();
             label17 = new Label();
@@ -68,7 +71,7 @@
             label1 = new Label();
             dgvBook = new DataGridView();
             groupBox3 = new GroupBox();
-            pictureBox1 = new PictureBox();
+            ptrAnh = new PictureBox();
             txtTenNV = new TextBox();
             txtAuthor = new TextBox();
             label18 = new Label();
@@ -80,14 +83,15 @@
             label3 = new Label();
             label2 = new Label();
             groupBox1 = new GroupBox();
+            btnLogout = new Button();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCus).BeginInit();
             groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvDetailOrder).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDetailHD).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBook).BeginInit();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptrAnh).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -130,6 +134,10 @@
             // 
             // groupBox5
             // 
+            groupBox5.Controls.Add(txtSoLuongCTHD);
+            groupBox5.Controls.Add(lbMaCTHD);
+            groupBox5.Controls.Add(label21);
+            groupBox5.Controls.Add(label14);
             groupBox5.Controls.Add(btnThanhToan);
             groupBox5.Controls.Add(lbNameNV);
             groupBox5.Controls.Add(label20);
@@ -137,7 +145,7 @@
             groupBox5.Controls.Add(label15);
             groupBox5.Controls.Add(lbThanhTien);
             groupBox5.Controls.Add(label11);
-            groupBox5.Controls.Add(dgvDetailOrder);
+            groupBox5.Controls.Add(dgvDetailHD);
             groupBox5.Controls.Add(txtAddressCus);
             groupBox5.Controls.Add(txtPhoneCus);
             groupBox5.Controls.Add(label17);
@@ -151,6 +159,39 @@
             groupBox5.TabIndex = 10;
             groupBox5.TabStop = false;
             groupBox5.Text = "Thông tin hóa đơn";
+            // 
+            // txtSoLuongCTHD
+            // 
+            txtSoLuongCTHD.Location = new Point(117, 343);
+            txtSoLuongCTHD.Name = "txtSoLuongCTHD";
+            txtSoLuongCTHD.Size = new Size(100, 23);
+            txtSoLuongCTHD.TabIndex = 16;
+            // 
+            // lbMaCTHD
+            // 
+            lbMaCTHD.AutoSize = true;
+            lbMaCTHD.Location = new Point(100, 312);
+            lbMaCTHD.Name = "lbMaCTHD";
+            lbMaCTHD.Size = new Size(0, 15);
+            lbMaCTHD.TabIndex = 15;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(37, 346);
+            label21.Name = "label21";
+            label21.Size = new Size(54, 15);
+            label21.TabIndex = 15;
+            label21.Text = "Số lượng";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(37, 312);
+            label14.Name = "label14";
+            label14.Size = new Size(58, 15);
+            label14.TabIndex = 15;
+            label14.Text = "Mã CTHĐ";
             // 
             // btnThanhToan
             // 
@@ -214,13 +255,14 @@
             label11.TabIndex = 10;
             label11.Text = "Thành tiền :";
             // 
-            // dgvDetailOrder
+            // dgvDetailHD
             // 
-            dgvDetailOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDetailOrder.Location = new Point(83, 148);
-            dgvDetailOrder.Name = "dgvDetailOrder";
-            dgvDetailOrder.Size = new Size(348, 149);
-            dgvDetailOrder.TabIndex = 8;
+            dgvDetailHD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDetailHD.Location = new Point(83, 148);
+            dgvDetailHD.Name = "dgvDetailHD";
+            dgvDetailHD.Size = new Size(348, 149);
+            dgvDetailHD.TabIndex = 8;
+            dgvDetailHD.CellClick += dgvDetailHD_CellClick;
             // 
             // txtAddressCus
             // 
@@ -377,12 +419,14 @@
             // 
             // btnXoa
             // 
+            btnXoa.Enabled = false;
             btnXoa.Location = new Point(618, 22);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(81, 29);
             btnXoa.TabIndex = 1;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnThem
             // 
@@ -396,12 +440,14 @@
             // 
             // btnSua
             // 
+            btnSua.Enabled = false;
             btnSua.Location = new Point(445, 22);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(81, 29);
             btnSua.TabIndex = 1;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnLamMoi
             // 
@@ -411,6 +457,7 @@
             btnLamMoi.TabIndex = 1;
             btnLamMoi.Text = "Làm mới";
             btnLamMoi.UseVisualStyleBackColor = true;
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
             // txtSearch
             // 
@@ -418,6 +465,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(172, 23);
             txtSearch.TabIndex = 2;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // label1
             // 
@@ -439,7 +487,7 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(pictureBox1);
+            groupBox3.Controls.Add(ptrAnh);
             groupBox3.Controls.Add(txtSumMoney);
             groupBox3.Controls.Add(txtTenNV);
             groupBox3.Controls.Add(txtMaNV);
@@ -467,15 +515,14 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Khách hàng";
             // 
-            // pictureBox1
+            // ptrAnh
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(562, 50);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 153);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            ptrAnh.Location = new Point(562, 50);
+            ptrAnh.Name = "ptrAnh";
+            ptrAnh.Size = new Size(137, 153);
+            ptrAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+            ptrAnh.TabIndex = 2;
+            ptrAnh.TabStop = false;
             // 
             // txtTenNV
             // 
@@ -577,11 +624,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin sách";
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new Point(23, 12);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(75, 23);
+            btnLogout.TabIndex = 11;
+            btnLogout.Text = "Đăng xuất";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // QLBH
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1313, 680);
+            Controls.Add(btnLogout);
             Controls.Add(groupBox4);
             Controls.Add(groupBox5);
             Controls.Add(groupBox2);
@@ -596,12 +654,12 @@
             ((System.ComponentModel.ISupportInitialize)dgvCus).EndInit();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvDetailOrder).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDetailHD).EndInit();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvBook).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptrAnh).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -616,7 +674,7 @@
         private Label label15;
         private Label lbThanhTien;
         private Label label11;
-        private DataGridView dgvDetailOrder;
+        private DataGridView dgvDetailHD;
         private TextBox txtPhoneCus;
         private TextBox txtNameCus;
         private Label label12;
@@ -651,7 +709,7 @@
         private Label label17;
         private Label label16;
         private DateTimePicker dtpNgayMua;
-        private PictureBox pictureBox1;
+        private PictureBox ptrAnh;
         private TextBox txtTenNV;
         private TextBox txtAuthor;
         private Label label18;
@@ -660,5 +718,10 @@
         private Label label20;
         private Button btnThanhToan;
         private DataGridView dgvCus;
+        private Button btnLogout;
+        private TextBox txtSoLuongCTHD;
+        private Label lbMaCTHD;
+        private Label label21;
+        private Label label14;
     }
 }

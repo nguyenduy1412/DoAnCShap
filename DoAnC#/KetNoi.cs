@@ -10,7 +10,7 @@ namespace DoAnC_
 {
     internal class KetNoi
     {
-        private string strCon = @"Data Source=DESKTOP-32FOJN8\SQLEXPRESS;Initial Catalog=QLHS;Integrated Security=True";
+        private string strCon = @"Data Source=DESKTOP-32FOJN8;Initial Catalog=QLHS1;Integrated Security=True";
         private SqlConnection conn;
         public KetNoi()
         {
@@ -22,6 +22,13 @@ namespace DoAnC_
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             da.Fill(tb);
             return tb;
+        }
+        public String layBien(string query)
+        {
+            DataTable tb = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(query,conn);
+            da.Fill(tb);
+            return tb.Rows[0][0].ToString();
         }
         public bool thucThi(string query)
         {

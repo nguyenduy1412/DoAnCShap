@@ -28,3 +28,9 @@ D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.NhanVie
 D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.QLBH.resources
 D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC#.sourcelink.json
 D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.Properties.Resources.resources
+D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.DanhMuc.resources
+D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.Author.resources
+D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.NhaXB.resources
+D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.Book.resources
+D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.PhieuNhap.resources
+D:\Documents\HK1(2024)\ASP\DoAnC#\DoAnC#\obj\Debug\net8.0-windows\DoAnC_.ADMIN.resources

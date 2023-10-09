@@ -30,9 +30,20 @@ namespace DoAnC_
             {
                 string roleName = tb.Rows[0]["roleName"].ToString();
                 MessageBox.Show("Đăng nhập thành công");
-                QLBH frm = new QLBH(txtUserName.Text);
-                frm.Show();
-                this.Hide();
+                if (roleName=="USER")
+                {
+                    QLBH frm = new QLBH(txtUserName.Text);
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    ADMIN frm = new ADMIN();
+                    frm.Show();
+                    this.Hide();
+                }
+                
+                
             }
             else
             {

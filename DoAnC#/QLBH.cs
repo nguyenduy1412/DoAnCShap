@@ -14,8 +14,9 @@ namespace DoAnC_
 {
     public partial class QLBH : Form
     {
-        private String orderId;
+        private string maPX;
         private string userName;
+        private string maHD;
         public QLBH(string a)
         {
             InitializeComponent();
@@ -24,36 +25,26 @@ namespace DoAnC_
         KetNoi kn = new KetNoi();
         public void getData()
         {
-            string query = string.Format("select book.id, book.bookName,book.priceSale,Publicsher.namePublicsher,CATEGORY.categoryName,AUTHOR.nameAuthor,Warehouse.quantity\r\nfrom CATEGORY \r\njoin book on CATEGORY.id =book.categoryId\r\njoin Warehouse on book.id =Warehouse.bookId\r\njoin Publicsher on Publicsher.id =book.publicsherId\r\njoin AUTHOR on AUTHOR.id =book.authorId");
+            string query = string.Format("select book.id, book.bookName,book.priceSale,book.img,Publicsher.namePublicsher,CATEGORY.categoryName,AUTHOR.nameAuthor,kho.quantity\r\nfrom CATEGORY \r\njoin book on CATEGORY.id =book.categoryId\r\njoin kho on book.id =kho.bookId\r\njoin Publicsher on Publicsher.id =book.publicsherId\r\njoin AUTHOR on AUTHOR.id =book.authorId");
             DataTable tb = kn.layDuLieu(query);
             dgvBook.DataSource = tb;
             string queryCus = string.Format("select * from Customer");
             dgvCus.DataSource = kn.layDuLieu(queryCus);
-            string queryLayOrder = String.Format("select * from ORDERS where dateOrder='{0}' and sdtCustomer='{1}' and userId={2}",
-               dtpNgayMua.Value.ToString("yyyy-MM-dd"),
-               txtPhone.Text,
-               txtMaNV.Text);
-            DataTable tbOrder = kn.layDuLieu(queryLayOrder);
-            if(tbOrder.Rows.Count == 0)
-            {
-                orderId="0";
-            }
-            else
-            {
-                orderId= tbOrder.Rows[0]["id"].ToString();
-            }
-           
-            
+
+
+
             try
             {
-                string qureryDetail = String.Format("select bookId,quantity,price from Detail_Order where orderId={0}", orderId);
-                dgvDetailOrder.DataSource=kn.layDuLieu(qureryDetail);
+                string queryDetail = String.Format("select * from CHITIETHOADON where mahd={0}", maHD);
+                dgvDetailHD.DataSource = kn.layDuLieu(queryDetail);
+
             }
             catch
             {
 
             }
-           
+
+
         }
         private void QLBH_Load(object sender, EventArgs e)
         {
@@ -61,6 +52,7 @@ namespace DoAnC_
             DataTable tb = kn.layDuLieu(query);
             txtMaNV.Text = tb.Rows[0]["id"].ToString();
             txtTenNV.Text=tb.Rows[0]["fullName"].ToString();
+            lbNameNV.Text=tb.Rows[0]["fullName"].ToString();
             getData();
         }
 
@@ -69,25 +61,17 @@ namespace DoAnC_
             int r = e.RowIndex;
             if (r >= 0)
             {
-                /*txtMaSP.Enabled = false;
-                btnThem.Enabled = false;
-                btnSua.Enabled = true;
-                btnXoa.Enabled = true;*/
+
                 txtBookName.Text = dgvBook.Rows[r].Cells["bookName"].Value.ToString();
                 txtBookId.Text = dgvBook.Rows[r].Cells["id"].Value.ToString();
                 txtAuthor.Text = dgvBook.Rows[r].Cells["nameAuthor"].Value.ToString();
                 txtQuantity.Text = "1";
-                string query = string.Format("select book.*\r\nfrom CATEGORY \r\njoin book on CATEGORY.id =book.categoryId\r\njoin Warehouse on book.id =Warehouse.bookId\r\njoin Publicsher on Publicsher.id =book.publicsherId\r\njoin AUTHOR on AUTHOR.id =book.authorId");
-                DataTable tb = kn.layDuLieu(query);
+                txtSumMoney.Text=dgvBook.Rows[r].Cells["priceSale"].Value.ToString();
                 try
                 {
-                    int gia = int.Parse(tb.Rows[r]["priceSale"].ToString());
-                    txtSumMoney.Text= (gia*1).ToString();
+                    ptrAnh.Image=Image.FromFile(dgvBook.Rows[r].Cells["img"].Value.ToString());
                 }
-                catch
-                {
-                    txtSumMoney.Text="0";
-                }
+                catch { }
 
 
             }
@@ -128,60 +112,67 @@ namespace DoAnC_
                 txtCustomName.Text,
                 txtAddress.Text
                 );
+                // them khach hang thi them luon hoa don
+                string queryHD = string.Format("insert into HoaDon(sdtCus) values('{0}')", txtPhone.Text);
                 bool kt = kn.thucThi(query);
+                kt=kn.thucThi(queryHD);
+
                 if (kt==false)
                 {
                     MessageBox.Show("Thêm thất bại");
                 }
-            }
-            string queryLayOrder = String.Format("select * from ORDERS where dateOrder='{0}' and sdtCustomer='{1}' and userId={2}",
-               dtpNgayMua.Value.ToString("yyyy-MM-dd"),
-               txtPhone.Text,
-               txtMaNV.Text);
-            // nếu chưa có order thì thêm ngược lại thì không thêm
-            if (kn.layDuLieu(queryLayOrder).Rows.Count==0)
-            {
-                string queryAddOrder = String.Format("insert into ORDERS(userId,sdtCustomer,dateOrder) values({0},'{1}','{2}')",
-                    txtMaNV.Text,
-                    txtPhone.Text,
-                    dtpNgayMua.Value.ToString("yyyy-MM-dd"));
-                if (kn.thucThi(queryAddOrder)==false)
+                else
                 {
-                    MessageBox.Show("Thêm thất bại");
+                    btnLamMoi.PerformClick();
                 }
             }
-            DataTable tbOrder = kn.layDuLieu(queryLayOrder);
-            orderId= tbOrder.Rows[0]["id"].ToString();
-            //thêm bảng order detail
-            //th1 nếu có sản phẩm rồi thì sửa số lượng 
-            string queryCheckSoLuong = String.Format("select * from DETAIL_ORDER where bookId={0} and orderId={1}",txtBookId.Text,orderId);
-            if(kn.layDuLieu(queryCheckSoLuong).Rows.Count >0) 
+
+            // lay mahd 
+            string queryMaHD = string.Format("select * from hoadon where sdtCus={0}", txtPhone.Text);
+            maHD = kn.layBien(queryMaHD);
+            // them sach vao chi tiet hoa don khi co mahd
+            //kiem tra san pham co chua
+
+            string queryCheck = string.Format("select * from CHITIETHOADON where bookId={0} and mahd={1}",
+                txtBookId.Text,
+                maHD);
+            //th1 san pham bi trung cap nhat lai so luong
+            string queryThemHD;
+            if (kn.layDuLieu(queryCheck).Rows.Count >0)
             {
-                int soluong = int.Parse(txtQuantity.Text) + int.Parse( kn.layDuLieu(queryCheckSoLuong).Rows[0]["quantity"].ToString());
-                int money= int.Parse(txtSumMoney.Text) + int.Parse(kn.layDuLieu(queryCheckSoLuong).Rows[0]["price"].ToString());
-                
-                string queryUpdateQuantity = String.Format("update DETAIL_ORDER SET quantity={0} , price={1} where orderId={2} and bookId={3}",
-                    soluong,money,orderId,txtBookId.Text);
-               if(kn.thucThi(queryUpdateQuantity)==false)
-                {
-                    MessageBox.Show("Thêm thất bại");
-                }    
+                queryThemHD=string.Format("update CHITIETHOADON set quantity=quantity + {0} where bookId={1} and mahd={2}",
+                    txtQuantity.Text,
+                    txtBookId.Text,
+                    maHD
+                    );
             }
-            //nếu sản phẩm không có trong giỏ hàng thì thêm mới
+            //TH2 san pham k bi trung them moi
             else
             {
-                string queryAddOrderDetail = String.Format("insert into DETAIL_ORDER values({0},{1},{2},{3})",
-                txtBookId.Text,
-                orderId,
-                txtQuantity.Text,
-                txtSumMoney.Text);
-                if (kn.thucThi(queryAddOrderDetail)==false)
-                {
-                    MessageBox.Show("Thêm thất bại");
-                }
-            }    
-            string queryTongTien = String.Format("select sum(price) from DETAIL_ORDER where orderId={0}",
-                tbOrder.Rows[0]["id"].ToString());
+                queryThemHD = String.Format("insert into CHITIETHOADON (bookId,mahd,quantity) values({0},{1},{2})",
+                   txtBookId.Text,
+                   maHD,
+                   txtQuantity.Text);
+            }
+            //thuc hien them
+            if (kn.thucThi(queryThemHD))
+            {
+                MessageBox.Show("Thêm thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm thất bại");
+            }
+            // lay tat ca sach co trong hoa don cua khach hang
+            string queryCTHD = string.Format("select * from CHITIETHOADON where mahd={0}", maHD);
+            DataTable tbCTHD = kn.layDuLieu(queryCTHD);
+            dgvDetailHD.DataSource = tbCTHD;
+
+
+
+
+            string queryTongTien = String.Format("SELECT  SUM(b.price * c.quantity) AS tongTien ,c.mahd\r\nFROM chitiethoadon c\r\nJOIN Book b ON c.bookId = b.id\r\nwhere c.mahd={0}\r\nGROUP BY c.mahd",
+                tbCTHD.Rows[0]["mahd"].ToString());
             DataTable tbTongTien = kn.layDuLieu(queryTongTien);
             lbThanhTien.Text=tbTongTien.Rows[0][0].ToString();
             getData();
@@ -201,7 +192,7 @@ namespace DoAnC_
                 txtAddress.Text="";
                 txtCustomName.Text="";
             }
-            getData() ;
+            getData();
         }
 
         private void lbNameNV_Click(object sender, EventArgs e)
@@ -211,14 +202,82 @@ namespace DoAnC_
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            string queryUpdate = String.Format("update ORDERS SET sumMoney={0} where id={1}",
-                lbThanhTien.Text,
-                orderId
-                );
-            if (kn.thucThi(queryUpdate)==false)
+            bool kt = false;
+            bool kt1 = false;
+            // lấy danh sách các sản phẩm trong bảng chi tiết hóa đơn
+            string qureryDetail = String.Format("select * from CHITIETHOADON where mahd={0}", maHD);
+            DataTable tbDetail = kn.layDuLieu(qureryDetail);
+            for (int i = 0; i<tbDetail.Rows.Count; i++)
             {
-                MessageBox.Show("Loi");
+                String querySoluongKho = String.Format("select quantity from kho where bookId={0}", tbDetail.Rows[i]["bookId"].ToString());
+                int soluongKho = int.Parse(kn.layBien(querySoluongKho));
+                int soluongDat = int.Parse(tbDetail.Rows[i]["quantity"].ToString());
+                // nếu có 1 sản phẩm vượt quá số lượng kho thì hủy
+                if (soluongDat > soluongKho)
+                {
+                    string queryDeleteDetail = String.Format("delete from CHITIETHOADON where id={0}", tbDetail.Rows[i]["id"].ToString());
+                    kn.thucThi(queryDeleteDetail);
+                    kt=true;
+
+                }
             }
+            if (kt)
+            {
+                MessageBox.Show("Số lượng sách trong kho không đủ vui lòng đặt lại số lượng");
+            }
+            else
+            {
+                for (int i = 0; i<tbDetail.Rows.Count; i++)
+                {
+                    String querySoluongKho = String.Format("select quantity from kho where bookId={0}", tbDetail.Rows[i]["bookId"].ToString());
+                    int soluongKho = int.Parse(kn.layBien(querySoluongKho));
+                    int soluongDat = int.Parse(tbDetail.Rows[i]["quantity"].ToString());
+                    int soLuongKhoUpdate = soluongKho-soluongDat;
+                    String queryUpdateKho = String.Format("update kho set quantity={0} where bookId={1}", soLuongKhoUpdate, tbDetail.Rows[i]["bookId"].ToString());
+                    kt1=kn.thucThi(queryUpdateKho);
+
+                }
+
+                string queryPX = String.Format("INSERT INTO PhieuXuat(userId,sumMoney,sdtCustomer) values({0},{1},'{2}')",
+                    txtMaNV.Text,
+                    lbThanhTien.Text,
+                    txtPhone.Text
+                    );
+
+                if (kn.thucThi(queryPX)==false && kt1==false)
+                {
+                    MessageBox.Show("Loi");
+                }
+                else
+                {
+                    string MAPX = string.Format("SELECT * FROM PhieuXuat where userId={0} and sdtCustomer={1}",
+                        txtMaNV.Text,
+                        txtPhone.Text
+
+                        );
+                    maPX=kn.layBien(MAPX);
+                    // lưu tất cả các chi tiet hóa đơn vào phiếu xuất
+                    for (int i = 0; i<tbDetail.Rows.Count; i++)
+                    {
+                        string Gia = kn.layBien(string.Format("select price from book where id={0}", tbDetail.Rows[i]["bookId"]));
+                        string queryCTPX = string.Format("insert into ChiTietPhieuXuat (bookId,maphieuxuat,quantity,price) values({0},{1},{2},{3})",
+                            tbDetail.Rows[i]["bookId"].ToString(),
+                            maPX,
+                            tbDetail.Rows[i]["quantity"].ToString(),
+                            Gia
+                            );
+                        kn.thucThi(queryCTPX);
+                    }
+                    //xóa tất cả các sản phẩm
+                    string deleteCTHD = string.Format("delete from CHITIETHOADON where mahd={0}", maHD);
+                    kn.thucThi(deleteCTHD);
+
+                    MessageBox.Show("Đặt hàng thành công");
+
+                }
+            }
+
+            getData();
 
         }
 
@@ -227,11 +286,115 @@ namespace DoAnC_
             int r = e.RowIndex;
             if (r >= 0)
             {
-                txtPhone.Text = dgvCus.Rows[r].Cells["sdt"].Value.ToString();
-                txtPhoneCus.Text=dgvCus.Rows[r].Cells["sdt"].Value.ToString();
-                txtNameCus.Text=dgvCus.Rows[r].Cells["customerName"].Value.ToString();
-                txtAddressCus.Text=dgvCus.Rows[r].Cells["addresss"].Value.ToString();
+                try
+                {
+                    txtPhone.Text = dgvCus.Rows[r].Cells["sdt"].Value.ToString();
+                    txtPhoneCus.Text=dgvCus.Rows[r].Cells["sdt"].Value.ToString();
+                    txtNameCus.Text=dgvCus.Rows[r].Cells["customerName"].Value.ToString();
+                    txtAddressCus.Text=dgvCus.Rows[r].Cells["addresss"].Value.ToString();
+                    // lay mahd 
+                    string queryMaHD = string.Format("select * from hoadon where sdtCus={0}", txtPhone.Text);
+                    maHD = kn.layBien(queryMaHD);
+                    string queryCTHD = string.Format("select * from CHITIETHOADON where mahd={0}", maHD);
+                    DataTable tbCTHD = kn.layDuLieu(queryCTHD);
+                    dgvDetailHD.DataSource = tbCTHD;
+                    string queryTongTien = String.Format("SELECT  SUM(b.price * c.quantity) AS tongTien ,c.mahd\r\nFROM chitiethoadon c\r\nJOIN Book b ON c.bookId = b.id\r\nwhere c.mahd={0}\r\nGROUP BY c.mahd",
+                    tbCTHD.Rows[0]["mahd"].ToString());
+                    DataTable tbTongTien = kn.layDuLieu(queryTongTien);
+                    lbThanhTien.Text=tbTongTien.Rows[0][0].ToString();
+                }
+                catch
+                {
+                    lbThanhTien.Text="0";
+                }
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login frm = new Login();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void dgvDetailHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = e.RowIndex;
+            if (r >= 0)
+            {
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+                try
+                {
+                    lbMaCTHD.Text=dgvDetailHD.Rows[r].Cells["id"].Value.ToString();
+                    txtSoLuongCTHD.Text=dgvDetailHD.Rows[r].Cells["quantity"].Value.ToString();
+                   
+                }
+                catch { }
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            btnSua.Enabled=false;
+            btnXoa.Enabled=false;
+            btnThem.Enabled = true;
+            btnLamMoi.Enabled = true;
+            txtBookId.Text="";
+            txtBookName.Text="";
+            txtQuantity.Text="1";
+            txtAuthor.Text="";
+            txtSumMoney.Text="0";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = string.Format("delete from chitiethoadon where id={0}", lbMaCTHD.Text);
+                if (kn.thucThi(query))
+                {
+                    MessageBox.Show("Xóa thành công");
+                    btnLamMoi.PerformClick();
+                    getData();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại");
+                }
+
+            }
+            catch { }
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = string.Format("update CHITIETHOADON set quantity= {0} where id={1}",
+                    txtSoLuongCTHD.Text,
+                    lbMaCTHD.Text
+                    
+                    );
+                if (kn.thucThi(query))
+                {
+                    MessageBox.Show("Sửa thành công");
+                    btnLamMoi.PerformClick();
+                    getData();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                }
+
+            }
+            catch { }
         }
     }
 }
