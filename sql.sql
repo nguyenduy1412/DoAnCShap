@@ -72,6 +72,7 @@ CREATE TABLE BOOK
 	priceSale int,
 	sale int,
 	img nvarchar(255),
+	int namxb,
 	categoryId int,
 	FOREIGN KEY(categoryId) REFERENCES CATEGORY(id),
 	FOREIGN KEY(publicsherId) REFERENCES Publicsher(id),

@@ -303,8 +303,9 @@ namespace DoAnC_
                     DataTable tbTongTien = kn.layDuLieu(queryTongTien);
                     lbThanhTien.Text=tbTongTien.Rows[0][0].ToString();
                 }
-                catch
-                {
+                catch(Exception ex)
+                { 
+                    
                     lbThanhTien.Text="0";
                 }
             }

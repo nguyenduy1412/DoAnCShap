@@ -91,9 +91,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(11, 95);
             label3.Name = "label3";
-            label3.Size = new Size(82, 15);
+            label3.Size = new Size(63, 15);
             label3.TabIndex = 1;
-            label3.Text = "Tên danh mục";
+            label3.Text = "Tên tác giả";
             // 
             // txtTenTacGia
             // 
@@ -175,9 +175,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(11, 45);
             label2.Name = "label2";
-            label2.Size = new Size(81, 15);
+            label2.Size = new Size(62, 15);
             label2.TabIndex = 1;
-            label2.Text = "Mã danh mục";
+            label2.Text = "Mã tác giả";
             // 
             // txtMaTacGia
             // 

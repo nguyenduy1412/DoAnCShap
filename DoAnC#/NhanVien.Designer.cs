@@ -55,13 +55,13 @@
             btnSua = new Button();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
+            dtpNgaySinh = new DateTimePicker();
             rdNu = new RadioButton();
             rdNam = new RadioButton();
             label6 = new Label();
             txtMaNV = new TextBox();
             txtSDT = new TextBox();
             txtPass = new TextBox();
-            dtpNgaySinh = new DateTimePicker();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNhanVien).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptrAnh).BeginInit();
@@ -113,7 +113,6 @@
             // 
             // txtEmail
             // 
-            txtEmail.Enabled = false;
             txtEmail.Location = new Point(405, 119);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(121, 23);
@@ -173,7 +172,6 @@
             // 
             // txtUserName
             // 
-            txtUserName.Enabled = false;
             txtUserName.Location = new Point(405, 163);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(121, 23);
@@ -336,6 +334,14 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Sách";
             // 
+            // dtpNgaySinh
+            // 
+            dtpNgaySinh.Format = DateTimePickerFormat.Short;
+            dtpNgaySinh.Location = new Point(114, 157);
+            dtpNgaySinh.Name = "dtpNgaySinh";
+            dtpNgaySinh.Size = new Size(124, 23);
+            dtpNgaySinh.TabIndex = 12;
+            // 
             // rdNu
             // 
             rdNu.AutoSize = true;
@@ -384,19 +390,10 @@
             // 
             // txtPass
             // 
-            txtPass.Enabled = false;
             txtPass.Location = new Point(405, 204);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(121, 23);
             txtPass.TabIndex = 1;
-            // 
-            // dtpNgaySinh
-            // 
-            dtpNgaySinh.Format = DateTimePickerFormat.Short;
-            dtpNgaySinh.Location = new Point(114, 157);
-            dtpNgaySinh.Name = "dtpNgaySinh";
-            dtpNgaySinh.Size = new Size(124, 23);
-            dtpNgaySinh.TabIndex = 12;
             // 
             // NhanVien
             // 
