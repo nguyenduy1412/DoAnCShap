@@ -54,15 +54,17 @@ namespace DoAnC_
             int r = e.RowIndex;
             if (r >= 0)
             {
-                txtBookId.Text =dgvBook.Rows[r].Cells["id"].Value.ToString();
-                txtBookName.Text =dgvBook.Rows[r].Cells["bookName"].Value.ToString();
-                double gia = int.Parse(dgvBook.Rows[r].Cells["price"].Value.ToString());
-                txtGia.Text=(gia / 1.2).ToString();
+               
 
                 /*  txtBookId.Text =dgvBook.Rows[r].Cells["id"].Value.ToString();*/
                 try
                 {
                     ptrAnh.Image=Image.FromFile(dgvBook.Rows[r].Cells["img"].Value.ToString());
+                    txtBookId.Text =dgvBook.Rows[r].Cells["id"].Value.ToString();
+                    txtBookName.Text =dgvBook.Rows[r].Cells["bookName"].Value.ToString();
+                    double gia = int.Parse(dgvBook.Rows[r].Cells["price"].Value.ToString());
+                    /*txtGia.Text=(gia / 1.2).ToString();*/
+                    txtGia.Text=(gia).ToString();
                 }
                 catch { }
                 /* btnSua.Enabled=true;
@@ -96,10 +98,10 @@ namespace DoAnC_
             int r = e.RowIndex;
             if (r >= 0)
             {
-                lbMaPN.Text =dgvPhieuNhap.Rows[r].Cells["id"].Value.ToString();
+               
                 try
                 {
-
+                    lbMaPN.Text =dgvPhieuNhap.Rows[r].Cells["id"].Value.ToString();
                     dtpNgayNhap.Value =(DateTime)dgvPhieuNhap.Rows[r].Cells["ngaynhap"].Value;
                     lbTienNhap.Text =dgvPhieuNhap.Rows[r].Cells["tiennhap"].Value.ToString();
                 }
@@ -177,7 +179,7 @@ namespace DoAnC_
 
                 for (int i = 0; i<n; i++)
                 {
-                    updateKho = string.Format("update kho set quantity={0} where bookId={1}",
+                    updateKho = string.Format("update kho set quantity+={0} where bookId={1}",
                         dgvCTPN.Rows[i].Cells["soluong"].Value.ToString(),
                         dgvCTPN.Rows[i].Cells["bookId"].Value.ToString()
                         );

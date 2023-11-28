@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\phieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\phieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\ketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\ketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\phieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\phieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\qlbh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\qlbh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\qlbh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\qlbh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|d:\\documents\\hk1(2024)\\asp\\doanc#\\doanc#\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63643BF-678B-423E-98F8-7726BF2DAEFA}|DoAnC#\\DoAnC#.csproj|solutionrelative:doanc#\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PhieuNhap.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\PhieuNhap.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\PhieuNhap.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\PhieuNhap.cs",
+              "RelativeToolTip": "DoAnC#\\PhieuNhap.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAgwMIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-27T09:57:57.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PhieuNhap.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\PhieuNhap.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\PhieuNhap.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\PhieuNhap.cs [Design]",
+              "RelativeToolTip": "DoAnC#\\PhieuNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-27T09:57:46.242Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QLBH.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\QLBH.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\QLBH.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\QLBH.cs",
+              "RelativeToolTip": "DoAnC#\\QLBH.cs",
+              "ViewState": "AQIAACwBAAAAAAAAAAAkwDIBAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T11:30:36.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Login.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\Login.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Login.cs",
+              "RelativeToolTip": "DoAnC#\\Login.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T11:28:55.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Login.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\Login.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Login.cs",
+              "RelativeToolTip": "DoAnC#\\Login.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T11:28:53.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Book.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\Book.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Book.cs",
+              "RelativeToolTip": "DoAnC#\\Book.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T10:57:57.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ADMIN.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\ADMIN.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\ADMIN.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\ADMIN.cs",
+              "RelativeToolTip": "DoAnC#\\ADMIN.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T11:36:33.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Program.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\Program.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Program.cs",
+              "RelativeToolTip": "DoAnC#\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T11:28:32.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KetNoi.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\KetNoi.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\KetNoi.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\KetNoi.cs",
+              "RelativeToolTip": "DoAnC#\\KetNoi.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-10T14:50:40.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NhanVien.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\NhanVien.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\NhanVien.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\NhanVien.cs [Design]",
+              "RelativeToolTip": "DoAnC#\\NhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T10:57:51.243Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Author.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Author.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\Author.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Author.cs",
+              "RelativeToolTip": "DoAnC#\\Author.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-11T09:35:44.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "QLBH.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\QLBH.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\QLBH.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\QLBH.cs",
+              "RelativeToolTip": "DoAnC#\\QLBH.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T11:29:56.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Book.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\Book.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\Book.cs",
+              "RelativeToolTip": "DoAnC#\\Book.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T11:48:37.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ADMIN.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\ADMIN.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\ADMIN.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\ADMIN.cs",
+              "RelativeToolTip": "DoAnC#\\ADMIN.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T11:26:34.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NhanVien.cs",
+              "DocumentMoniker": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\NhanVien.cs",
+              "RelativeDocumentMoniker": "DoAnC#\\NhanVien.cs",
+              "ToolTip": "D:\\Documents\\HK1(2024)\\ASP\\DoAnC#\\DoAnC#\\NhanVien.cs",
+              "RelativeToolTip": "DoAnC#\\NhanVien.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-09T10:56:03.65Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
