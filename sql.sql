@@ -18,13 +18,7 @@ CREATE TABLE USERS
 	img nvarchar(255)
 	
 )
-SELECT USERS.*,USER_ROLE.roleId
-FROM USERS
-JOIN USER_ROLE ON USERS.id = USER_ROLE.userId
-JOIN ROLE ON USER_ROLE.roleId = ROLE.id
-INSERT INTO USERS(userName,password,fullName,gender,birthday,addresss,telephone,img) values(N'kien',N'123',N'kkk',N'Nam','2003-7-21',N'HN','043424',N'123')
-UPDATE USERS SET userName= ,password= ,gender= ,birthday= ,addresss=,telephone=,img= where id =
-update USER_ROLE set roleId= where userId
+
 GO
 CREATE TABLE ROLE
 (
@@ -72,7 +66,7 @@ CREATE TABLE BOOK
 	priceSale int,
 	sale int,
 	img nvarchar(255),
-	int namxb,
+	namxb int,
 	categoryId int,
 	FOREIGN KEY(categoryId) REFERENCES CATEGORY(id),
 	FOREIGN KEY(publicsherId) REFERENCES Publicsher(id),
@@ -120,7 +114,6 @@ CREATE TABLE HoaDon
 (
 	id int identity(1,1) primary key,
 	sdtCus nvarchar(15),
-	FOREIGN KEY(idUser) REFERENCES USERS(id),
 	FOREIGN KEY(sdtCus) REFERENCES CUSTOMER(sdt)
 )
 go
@@ -135,7 +128,6 @@ CREATE TABLE CHITIETHOADON
 	FOREIGN KEY(bookId) REFERENCES BOOK(id)
 
 )
-delete from CHITIETHOADON where bookId=
 CREATE TABLE PhieuXuat
 (
 	id int identity(1,1) primary key,
@@ -147,8 +139,7 @@ CREATE TABLE PhieuXuat
 	FOREIGN KEY(sdtCustomer) REFERENCES CUSTOMER(sdt),
 )
 --phieu xuat
-INSERT INTO PhieuXuat(userId,sumMoney,sdtCustomer) values()
-go
+
 CREATE TABLE ChiTietPhieuXuat
 (
 	id int identity(1,1) primary key,
@@ -162,7 +153,8 @@ CREATE TABLE ChiTietPhieuXuat
 )
 insert into ChiTietPhieuXuat (bookId,maphieuxuat,quantity,price) values(1,1,1)
 
-
+ALTER TABLE BOOK
+DROP COLUMN quantity;
 -- danh mục
 SELECT * FROM CATEGORY
 INSERT INTO CATEGORY(categoryName) values(N'thiếu nhi')
